@@ -3,5 +3,6 @@ from  . import views
 
 
 urlpatterns = [
-    path('',viwes.home, name='home')
+    path('',views.home, name='home'),
+    path('login',views.login, name='login')
 ]

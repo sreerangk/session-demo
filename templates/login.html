@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="container-fluid py-5 ">	
+  <!-- row and justify-content-center class is used to place the form in center -->
+  <br>
+  <section class="row justify-content-center">
+    <section class="col-12 col-sm-6 col-md-4">
+      <div class="container h-100">
+      <div class="card" style="border-radius: 15px;">
+        <div class="card-body p-5">
+    <form class="form-container" action="{% url 'login' %}" method="POST">
+        {% csrf_token %}	
+      
+    <div class="form-group">
+      <h4 class="text-center font-weight-bold">LOGIN</h4>
+      <label for="InputEmail1">User name</label>
+       <input type="text" class="form-control" id="InputEmail1" aria-describeby="emailHelp" placeholder="Enter email" name="uname">
+    </div>
+    <div class="form-group">
+      <label for="InputPassword1">Password</label>
+      <input type="password" class="form-control"  id="InputPassword1" placeholder="Password" name="Password">
+    </div>
+  
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+    <div class="form-footer">
+    <p>Don't have an account? <a href="">Sign Up</a></p>
+     <a href="/">forgot password ?</a> 
+    
+
+    </div>
+    </form>
+    </section>
+  </section>
+  </section>
+
+  
+
+    {% endblock %}
