@@ -7,15 +7,11 @@
       class="container justify-content-center mt-5"
       style="width: fit-content"
     >
-      {% if username %}
-      <h4>You are logged in as {{username}}</h4>
-      <h4>Login Status: {{login_status}}</h4>
       
-      <button><a href="{% url 'logout' %}">logout</a></button>
-      {% else %}
-      <h4>You are not logged in</h4>
-      <button><a href="{% url 'logout' %}">login</a></button>
-      {% endif %}
+      <h4>You are not logged in <h1>user name    <strong>{{user}}</strong></h1></h4>
+    
+      
+      <button><a href="{% url 'user_logout' %}">logout</a></button>
       <a href="{% url 'home' %}">home</a>
     </div>
   </body>
