@@ -1,4 +1,5 @@
 from urllib import request
+from django.contrib import messages #passwrd incrrct time send  messg
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,login ,logout  #django authendicarion (login logout)
 #from django.contrib.auth.decorators import login_required  //3rd method
@@ -17,7 +18,8 @@ def user_login(request):
             login(request, user)
             return redirect(home)
         else:
-            print('invalid credentials')
+            messages.error(request,'username or password not correct')
+            return redirect('user_login')
     return render(request, 'login.html')
 
 #@login_required(login_url='/')                  //3rd method
