@@ -26,7 +26,7 @@ def user_login(request):
 def home(request):
     # if 'username' in request.session:          /// 2nd method
     if request.user.is_authenticated:
-         return render(request, 'home.html')
+        return render(request, 'home.html')
    
     return redirect(user_login)
 
